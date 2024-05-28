@@ -10,6 +10,8 @@ import toast from "react-hot-toast";
 
 function Page() {
   const { userData, loading } = useUser();
+  // console.log({userData});
+  
   const router = useRouter();
   const { register, handleSubmit } = useForm();
   const [date, setDate] = useState("");
@@ -36,9 +38,10 @@ function Page() {
   if (userData?.role === "student") {
     router.push("/student");
   }
-  if (!userData) {
-    router.push("/login");
-  }
+  // if (!userData) {
+  //   alert('going to login')
+  //   router.push("/login");
+  // }
   return (
     <div className="max-w-3xl px-4 mt-10 mx-auto">
       <h1 className="underline text-2xl font-bold mb-6">Add New Event</h1>
